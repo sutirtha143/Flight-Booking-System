@@ -1,6 +1,6 @@
 const {CityRepository} = require('../repositories')
 const {StatusCodes} = require('http-status-codes')
-const appError = require('../utils/errors/app-error')
+const AppError = require('../utils/errors/app-error')
 
 async function createCity(data){
     try {
@@ -15,14 +15,14 @@ async function createCity(data){
             error.errors.forEach((err) => {
                 explanation.push(err.message)
             })
-            throw new appError(explanation, StatusCodes.BAD_REQUEST)
+            throw new AppError(explanation, StatusCodes.BAD_REQUEST)
         }
-        throw new appError('Cannot create a new City object', StatusCodes)
+        throw new AppError('Cannot create a new City object', StatusCodes.INTERNAL_SERVER_ERROR)
     }
 }
 
 module.exports = {
-    createCity,
+    createCity
 }
 
 

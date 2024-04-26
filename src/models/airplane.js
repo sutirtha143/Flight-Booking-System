@@ -14,7 +14,11 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Flight, { //if an airplane gets deleted from database
         foreignKey: 'airplaneId',//then on flights for that airplane will exist
         onDelete: 'CASCADE'   //and thus will get deleted from flight table
-      })
+      });
+      this.hasMany(models.Seat, {
+        foreignKey: 'airplaneId',
+        onDelete: 'CASCADE'
+      });
     }
   }
   Airplane.init({

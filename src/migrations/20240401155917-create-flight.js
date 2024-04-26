@@ -20,9 +20,9 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: 'Airplanes',
-          key: 'id'
-        },
+          model: 'Airplanes', //we write model and key inplace of table and field
+          key: 'id' //when we are adding to database directly and not like extra
+        }, // constraint(like we did before by update airport table with extra migration)
         onDelete: 'CASCADE'
       },
       departureAirportId: {
