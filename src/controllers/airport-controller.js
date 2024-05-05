@@ -19,7 +19,7 @@ async function createAirport(req, res){
                 .json(SuccessResponse)
     }catch(error){
         ErrorResponse.error = error;
-        res
+        return res
          .status(error.statusCode)
          .json(ErrorResponse)
     }
@@ -36,7 +36,7 @@ async function getAirports(req, res){
                 .json(SuccessResponse)
     }catch(error){
         ErrorResponse.error = error;
-        res
+        return res
          .status(error.statusCode)
          .json(ErrorResponse)
     }
@@ -53,7 +53,7 @@ async function getAirport(req, res){
                 .json(SuccessResponse)
     }catch(error){
         ErrorResponse.error = error;
-        res
+        return res
          .status(error.statusCode)
          .json(ErrorResponse)
     }
@@ -70,7 +70,7 @@ async function destroyAirport(req, res){
                 .json(SuccessResponse)
     }catch(error){
         ErrorResponse.error = error;
-        res
+        return res
          .status(error.statusCode)
          .json(ErrorResponse)
     }

@@ -15,7 +15,7 @@ const {SuccessResponse, ErrorResponse} = require('../utils/common')
                 .json(SuccessResponse)
     }catch(error){
         ErrorResponse.error = error;
-        res
+        return res
          .status(error.statusCode)
          .json(ErrorResponse)
     }
